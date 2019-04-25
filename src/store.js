@@ -51,10 +51,7 @@ const initialState = {};
 const store = createStoreWithFirebase(
   rootReducer,
   initialState,
-  compose(
-    reactReduxFirebase(firebase),
-    window._REDUX_DEVTOOLS_EXTENSION_ && window._REDUX_DEVTOOLS_EXTENSION_()
-  )
+  window._REDUX_DEVTOOLS_EXTENSION_ && window._REDUX_DEVTOOLS_EXTENSION_()
 );
 
 export default store;
