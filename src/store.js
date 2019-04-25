@@ -33,6 +33,7 @@ firebase.initializeApp(firebaseConfig);
 //const firestore = firebase.firestore();
 
 // Add reactReduxFirebase enhancer when making store creator
+
 const createStoreWithFirebase = compose(
   reactReduxFirebase(firebase, rrfConfig), // firebase instance as first argument
   reduxFirestore(firebase) // <- needed if using firestore
