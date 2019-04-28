@@ -30,7 +30,9 @@ const rrfConfig = {
 firebase.initializeApp(firebaseConfig);
 
 //Initialize firestore
-//const firestore = firebase.firestore();
+const firestore = firebase.firestore();
+const settings = { timestampsInSnapshots: true };
+firestore.settings(settings);
 
 // Add reactReduxFirebase enhancer when making store creator
 
@@ -52,7 +54,7 @@ const initialState = {};
 const store = createStoreWithFirebase(
   rootReducer,
   initialState,
-  window._REDUX_DEVTOOLS_EXTENSION_ && window._REDUX_DEVTOOLS_EXTENSION_()
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 export default store;

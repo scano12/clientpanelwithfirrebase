@@ -14,7 +14,7 @@ class Clients extends Component {
     const { clients } = props;
 
     if (clients) {
-      //add ba;ances
+      //add balances
       const total = clients.reduce((total, client) => {
         return total + parseFloat(client.balance.toString());
       }, 0);
@@ -95,7 +95,7 @@ Clients.propTypes = {
 
 export default compose(
   firestoreConnect([{ collection: "clients" }]),
-  connect((state, _props) => ({
-    client: state.firestore.ordered.clients
+  connect((state, props) => ({
+    clients: state.firestore.ordered.clients
   }))
 )(Clients);
